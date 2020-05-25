@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!--Declaro el titulo de mi proyecto-->
+    <title>Inventario Material de Construccion</title>
+
+    <!--Este es el "link" que uso para llamar y aplicar los formatos CSS que apliqué dentro de mi codigo HTML-->
+    <style type="text/css">
+        @import url('formato.css');
+    </style>
+    <script type="text/javascript" src="../JS/jquery.min.js"></script>
+
+    <!--Aqui declaro una clase, en este caso es mi nombre y lo pongo arriba del titulo, como en un documento de word-->
+    <!--mi objeto dentro de la clase es estudiante-->
+    <!--mi metodo es metodo, y en este caso me va a regresar mi nombre y un texto que definí entre comillas-->
+    <p id="clase"></p>
+    <script>class Alumno {
+            constructor(nombre) {
+                this.nombrealumno = nombre;
+            }
+            metodo() {
+                return "Proyecto elaborado por: " + this.nombrealumno;
+            }
+        }
+        estudiante = new Alumno("Miguel Angel Castro Valencia");
+        document.getElementById("clase").innerHTML = estudiante.metodo();</script>
+
+
+</head>
+<h1>Material de Construcción</h1>
+<a></a>
+<body>
+    <p id="demo"></p>
+    <script src="api.js"></script>
+
+    <!--ARRAYS PARA CHECAR EL STOCK DE MATERIAL-->
+    <h0>Stock del material en obra</h0>
+    <script src="Stock.js"></script>
+
+    <!--Aquí empiezan los recuadros en donde se llenan los requerimientos-->
+    <!--El id lo utilicé como atributo para las distinas partes, este id no se repite más que para su propia "operacion"-->
+    </header>
+    </div>
+    <div class="DatosDelMaterial"> </div>
+    <div class="DatosDelMaterial">
+        <br class="Material1">
+        <fieldset>
+            <legend>Entrega de Material</legend>
+            <div>
+                <label for="IObra">Obra</label>
+                <br>
+                <input id="IDObra" type="text" placeholder="Nombre de la obra">
+            </div>
+            <div>
+                <label for="IMaterial">Material</label>
+                <br>
+                <input id="IDMaterial" type="text" placeholder="Ingrese el material">
+            </div>
+            <div>
+                <label for="ICantidad">Cantidad</label>
+                <br>
+                <input id="IDCantidad" type="number" placeholder="Ingrese la cantidad">
+            </div>
+            <div>
+                <label for="IFechaEntrega">Fecha de entrega</label>
+                <br>
+                <!--Se pone un type="date" para que se abra un calendario con la fecha-->
+                <input id="IDFechaEntrega" type="date" placeholder="dd/mm/aa">
+            </div>
+            <br>
+            <button id="Send_Buttun">Enviar</button>
+        </fieldset>
+        </br>
+        <!--La etiqueta fieldset me sirve para organizar mi solicitudes de material, etc-->
+        <fieldset>
+            <legend>Solicitud de Material</legend>
+            <div>
+                <div>
+                    <label>Material</label>
+                    <br>
+                    <input id="MaterialU" type="text" placeholder="Ingrese el material">
+                </div>
+                <div>
+                    <label>Numero de OC</label>
+                    <br>
+                    <input id="NumOCU" type="number" placeholder="No.Orden de Compra">
+                </div>
+                <div>
+                    <label>Cantidad</label>
+                    <br>
+                    <input id="CantidadB" type="number" placeholder="Ingrese la cantidad">
+                </div>
+            </div>
+            <div>
+                <label>Fecha de Solicitud</label>
+                <br>
+                <!--Se pone un type="date" para que se abra un calendario con la fecha-->
+                <input id="FechaSolicitudC" type="date" placeholder="dd/mm/aa">
+            </div>
+            <br>
+            <button id="Send_Button_2">Enviar Solicitud</button>
+        </fieldset>
+    </div>
+    <div class="InventoryButton">
+        <br>
+        <button>Nueva Solicitud</button>
+        <button>Revisar Solicitudes</button>
+        <button>Revisar Inventario</button>
+        </divd>
+    </div>
+    <br>
+    <legend>Calculadora de Materiales</legend>
+    <form>
+        Número 1: <input id="num1" type="number" /><br>
+        Número 2: <input id="num2" type="number" /><br>
+        <p id="resultado" ;"></p>
+        <input type="button" value="SUMAR" onclick="operaciones('sumar'); return false;" /><br />
+        <input type="button" value="RESTAR" onclick="operaciones('restar'); return false;" /><br />
+        <input type="button" value="MULTIPLICAR" onclick="operaciones('multiplicar'); return false;" /><br />
+        <input type="button" value="DIVIDIR" onclick="operaciones('dividir'); return false;" />
+        <!--Aqui se pone un src para poder llamar y aplicar todas mis operaciones dentro de mi archivo .js-->
+        <script src="JSproyecto.js"></script>
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!--JSON En este caso los datos que use son los mios, como mi matricula, semestre, asignatura, etc-->
+    <br>
+    <legend1>Datos del estudiante: </legend1>
+    <br>
+    <p3 id="estudiantejson"></p3>
+    <script>var studentjson = '{"datosEstudiante":[' +
+            '{"name": "Miguel Angel Castro Valencia"},' +
+            '{"matri": 920072575},' +
+            '{"semes":"Sexto Semestre" },' +
+            '{"campus":"UVM Campus Merida" },' +
+            '{"prof":"Bruno Centeno Perez" },' +
+            '{"asig":"Progremacion Orienta a Objetos" }]}';
+
+        obj = JSON.parse(studentjson);
+        document.getElementById("estudiantejson").innerHTML =
+            "Nombre: " + obj.datosEstudiante[0].name + ", Matricula: " + obj.datosEstudiante[1].matri + ", Semestre: " +
+            obj.datosEstudiante[2].semes + ", Campus: " + obj.datosEstudiante[3].campus +
+            ", Profesor: " + obj.datosEstudiante[4].prof + ", Asignatura: " + obj.datosEstudiante[5].asig;</script>
+    </div>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>
